@@ -318,7 +318,8 @@ footer {
     .product-quantity {
         font-size: 1.2rem;
     }
-}      
+}     
+ /* кнопка */ 
 .btn-up {
             /* фиксированное позиционирование */
             position: fixed;
@@ -416,7 +417,7 @@ footer {
                     </li>
                     <li class="product-item">
                         <span class="product-name">Яйцо барана</span>
-                        <span class="product-quantity">200 кг</span>
+                        <span class="product-quantity">100 кг</span>
                     </li>
                     <li class="product-item">
                         <span class="product-name">Яйцо куриное</span>
@@ -519,6 +520,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 800 + index * 200);
     });
 });
+// Кнопка
 const btnUp = {
     el: document.querySelector('.btn-up'),
     show() {
