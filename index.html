@@ -99,31 +99,36 @@ header {
     margin-bottom: 15px;
     font-size: 1.8rem;
 }
-.product-list {
-    list-style: none;
-    margin-top: 20px;
-}
-.product-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 7px 0;
-    border-bottom: 1px dashed #cbd5e1;
-    font-size: 1.1rem;
-}
-.product-item:last-child {
-    border-bottom: none;
-}
-.product-name {
-    font-weight: 400;
-}
-.product-quantity {
-    background: var(--primary);
-    color: white;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
+.categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .category-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .vegetables { color: #27ae60; }
+        .meat { color: #e74c3c; }
+        .fish { color: #3498db; }
 /* Timeline */
 .section-title {
     text-align: center;
@@ -277,12 +282,12 @@ footer {
         padding: 12px 20px;
     }
     
-    .product-item {
+    .categories {
         min-width: 120px;
         padding: 12px 15px;
     }
     
-    .product-icon {
+    .categories {
         font-size: 1.8rem;
     }
 }
@@ -298,24 +303,24 @@ footer {
         margin: 20px 10px;
     }
     
-    .product-list-container {
+    .categories {
         padding: 20px 15px;
     }
     
-    .products-horizontal {
+    .categories {
         gap: 15px;
     }
     
-    .product-item {
+    .categories{
         min-width: 100px;
         padding: 10px;
     }
     
-    .product-name {
+    .categories{
         font-size: 1rem;
     }
     
-    .product-quantity {
+    .categories {
         font-size: 1.2rem;
     }
 }     
@@ -394,36 +399,21 @@ footer {
     <div class="container">
         <div class="info-box">
             <h2 class="section-title">Планируемые закупки</h2>
-                <ul class="product-list">
-                    <li class="product-item">
-                        <span class="product-name">Картофель</span>
-                        <span class="product-quantity">100 кг</span>
-                    </li>
-                    <li class="product-item">
-                        <span class="product-name">Филе куриное ЗАМ</span>
-                        <span class="product-quantity">550 кг</span>
-                    </li>
-                    <li class="product-item">
-                        <span class="product-name">Помидор</span>
-                        <span class="product-quantity">180 кг</span>
-                    </li>
-                    <li class="product-item">
-                        <span class="product-name">Перец</span>
-                        <span class="product-quantity">200 кг</span>
-                    </li>
-                    <li class="product-item">
-                        <span class="product-name">Огурец</span>
-                        <span class="product-quantity">500 кг</span>
-                    </li>
-                    <li class="product-item">
-                        <span class="product-name">Яйцо барана</span>
-                        <span class="product-quantity">100 кг</span>
-                    </li>
-                    <li class="product-item">
-                        <span class="product-name">Яйцо куриное</span>
-                        <span class="product-quantity">20000 шт</span>
-                    </li>
-                </ul>
+            <div class="categories">
+                <a href="#vegetables" class="category-card">
+                    <div class="category-icon vegetables">🥦</div>
+                    <h2>Овощи и фрукты</h2>
+                </a>
+                <a href="#meat" class="category-card">
+                    <div class="category-icon meat">🍗</div>
+                    <h2>Мясо говядины и курицы</h2>
+                </a>
+                <a href="#fish" class="category-card">
+                    <div class="category-icon fish">🐟</div>
+                    <h2>Рыба и морепродукты</h2>
+                </a>
+               
+            </div>
             </div>
     </div>
     <!-- Timeline -->
@@ -497,7 +487,7 @@ footer {
         // Анимация элементов при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     // Анимация карточек товаров
-    const productItems = document.querySelectorAll('.product-item');
+    const productItems = document.querySelectorAll('.categories');
     productItems.forEach((item, index) => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(20px)';
