@@ -30,7 +30,8 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;   
+    padding: 0 20px;  
+    box-sizing: border-box; 
 }
 /* Header styles */
 header {
@@ -81,31 +82,17 @@ header {
     margin: 0 auto 2rem;
     color: #475569;
 }
-.highlight {
-    background: linear-gradient(120deg, #dbf4ff, #fff1f1);
-    padding: 3px 8px;
-    border-radius: 6px;
-    font-weight: 600;
-}
- /* Products Section */
- .info-box {
-    background: rgb(235, 235, 235);
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 30px;
-}
-.info-box h2 {
-    color: var(--primary-dark);
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-}
+
+ /* Категории */
+
 .categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
-        .category-card {
+        
+.category-card {
             background: white;
             border-radius: 15px;
             padding: 30px;
@@ -116,12 +103,13 @@ header {
             text-decoration: none;
             color: inherit;
         }
-        .category-card:hover {
+        
+.category-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
-        .category-icon {
+.category-icon {
             font-size: 3em;
             margin-bottom: 20px;
         }
@@ -129,17 +117,26 @@ header {
         .vegetables { color: #27ae60; }
         .meat { color: #e74c3c; }
         .fish { color: #3498db; }
-/* Timeline */
+        h2 {
+            color: #1d4ed8;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        /* Timeline */
 .section-title {
     text-align: center;
-    margin: 0 0 1.5rem;
+    margin-top: 70px;
+    margin-bottom: 70px;
     color: var(--primary-dark);
     font-size: 1.8rem;
+
 }
 .timeline {
     display: flex;
     justify-content: center;
     margin: 3rem auto;
+    margin-top: 10px;
     max-width: 800px;
 }
 .timeline-step {
@@ -281,11 +278,7 @@ footer {
         font-size: 1.1rem;
         padding: 12px 20px;
     }
-    .category-card {
-        min-width: 120px;
-        padding: 12px 15px;
-    }
-   
+}
 
 @media (max-width: 480px) {
     .header-content {
@@ -297,13 +290,6 @@ footer {
         padding: 2rem 1rem;
         margin: 20px 10px;
     }
-    .category-card {
-        min-width: 100px;
-        padding: 10px;
-    }
-  
-    
-  
 }     
  /* кнопка */ 
 .btn-up {
@@ -373,28 +359,31 @@ footer {
      <div class="container">
         <section class="hero">
             <h1>Предстоящая закупка товаров</h1>
-            <p>На <span class="highlight">январь 2026 года</span> запланировано приобретение следующих товаров. Указан предполагаемый объем, закупка будет осуществляться равными частями на протяжении текущего месяца. Просим вас направить коммерческие предложения с указанием цен и условий поставки.</p>
+            <p>На <span>январь 2026 года</span> запланировано приобретение следующих товаров. Указан предполагаемый объем, закупка будет осуществляться равными частями на протяжении текущего месяца. Просим вас направить коммерческие предложения с указанием цен и условий поставки.</p>
         </section>
     </div>
     <!-- Products Section -->
     <div class="container">
         <div class="info-box">
             <h2 class="section-title">Планируемые закупки</h2>
-            <div class="categories">
-                <a href="#vegetables" class="category-card">
-                    <div class="category-icon vegetables">🥦</div>
-                    <h2>Овощи и фрукты</h2>
-                </a>
-                <a href="#meat" class="category-card">
-                    <div class="category-icon meat">🍗</div>
-                    <h2>Мясо говядины и курицы</h2>
-                </a>
-                <a href="#fish" class="category-card">
-                    <div class="category-icon fish">🐟</div>
-                    <h2>Рыба и морепродукты</h2>
-                </a>
-               
-            </div>
+                <ul> 
+                    <div class="categories">
+                        <a href="#vegetables" class="category-card">
+                            <div class="category-icon vegetables">🥦</div>
+                            <h2>Овощи и фрукты</h2>
+                        </a>
+                    
+                        <a href="#meat" class="category-card">
+                        <div class="category-icon meat">🍗</div>
+                        <h2>Мясо говядины и курицы</h2>
+                        </a>
+                    
+                        <a href="#fish" class="category-card">
+                        <div class="category-icon fish">🐟</div>
+                        <h2>Рыба и морепродукты</h2>
+                        </a>
+                    </div>
+                </ul>
             </div>
     </div>
     <!-- Timeline -->
